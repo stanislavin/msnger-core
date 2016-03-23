@@ -60,7 +60,7 @@ void GisTransaction::onHTTPResponse(int errorCode, const char* response)
         return;
     }
     
-    Log::i("Google", "[HTTP RESP] address: %s", address.c_str());
+    Log::i("Google", "[HTTP RSP] address: %s", address.c_str());
     
     // deliver address to listener
     if (mCallback != NULL)

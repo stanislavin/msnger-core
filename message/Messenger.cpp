@@ -100,7 +100,11 @@ void Messenger::onMsgSend(Message& message, MessageResultListener* listener)
 
 void Messenger::onMsgProcessNextMessage()
 {
-    if (mMessages.empty()) return;
+    if (mMessages.empty())
+    {
+        Log::i("Messenger", "Message queue is empty");
+        return;
+    }
     
     MessageHolder& h = mMessages.front();
     h.expectedNextState = MSG_ID_ADDR_RESOLVED;
