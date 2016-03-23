@@ -6,14 +6,14 @@
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
 //
 
-#ifndef Msnger_hpp
-#define Msnger_hpp
+#ifndef Msnger_h
+#define Msnger_h
 
 typedef void* Msnger;
 typedef void (*onMessageSentCallback)(int error);
 
 Msnger createMsnger();
-void releaseMsnger(Msnger msnger);
-void sendMessage(Msnger msnger, char* number, char* message, double lat, double lon, onMessageSentCallback callback);
+void   releaseMsnger(Msnger msnger);
+void   sendMessage(Msnger msnger, char* number, char* message, double lat, double lon, onMessageSentCallback callback);
 
-#endif /* Msnger_hpp */
+#endif /* Msnger_h */
