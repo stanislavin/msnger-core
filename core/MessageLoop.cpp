@@ -46,8 +46,7 @@ void MessageLoop::runLoopInternal()
     do
     {
         mEvent.wait();
-        
-        MessageContext* mctx = NULL;
+
         unique_lock<recursive_mutex> lock(mThreadMutex);
         while (!mMsgQueue.empty())
         {
