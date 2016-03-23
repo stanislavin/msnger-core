@@ -1,0 +1,359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C6CBB2C01CA1D1E9001015E3 /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CBB2BF1CA1D1E9001015E3 /* libcurl.tbd */; };
+		C6CBB2E51CA2F0AC001015E3 /* MessageLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6CBB2E21CA2F0AC001015E3 /* MessageLoop.cpp */; };
+		C6CBB2E91CA2F0B7001015E3 /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6CBB2E61CA2F0B7001015E3 /* HttpClient.cpp */; };
+		C6CBB2EF1CA2F0BF001015E3 /* jsmn.c in Sources */ = {isa = PBXBuildFile; fileRef = C6CBB2EB1CA2F0BF001015E3 /* jsmn.c */; };
+		C6CBB2F01CA2F0BF001015E3 /* jsmntools.c in Sources */ = {isa = PBXBuildFile; fileRef = C6CBB2ED1CA2F0BF001015E3 /* jsmntools.c */; };
+		C6CBB2F31CA2F0CA001015E3 /* InfobipTransaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6CBB2F11CA2F0CA001015E3 /* InfobipTransaction.cpp */; };
+		C6CBB2F61CA2F0D6001015E3 /* GisTransaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6CBB2F41CA2F0D6001015E3 /* GisTransaction.cpp */; };
+		C6CBB2FC1CA2F0E3001015E3 /* Message.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6CBB2F71CA2F0E3001015E3 /* Message.cpp */; };
+		C6CBB2FD1CA2F0E3001015E3 /* Messenger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6CBB2F91CA2F0E3001015E3 /* Messenger.cpp */; };
+		C6F92A801CA04A500047EDC9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6F92A7F1CA04A500047EDC9 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C6F92A7A1CA04A500047EDC9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C6CBB2BF1CA1D1E9001015E3 /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
+		C6CBB2DF1CA2F0AC001015E3 /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = core.h; path = ../core/core.h; sourceTree = "<group>"; };
+		C6CBB2E01CA2F0AC001015E3 /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = event.h; path = ../core/event.h; sourceTree = "<group>"; };
+		C6CBB2E11CA2F0AC001015E3 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Log.h; path = ../core/Log.h; sourceTree = "<group>"; };
+		C6CBB2E21CA2F0AC001015E3 /* MessageLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MessageLoop.cpp; path = ../core/MessageLoop.cpp; sourceTree = "<group>"; };
+		C6CBB2E31CA2F0AC001015E3 /* MessageLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageLoop.h; path = ../core/MessageLoop.h; sourceTree = "<group>"; };
+		C6CBB2E41CA2F0AC001015E3 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Timer.h; path = ../core/Timer.h; sourceTree = "<group>"; };
+		C6CBB2E61CA2F0B7001015E3 /* HttpClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HttpClient.cpp; path = ../http/HttpClient.cpp; sourceTree = "<group>"; };
+		C6CBB2E71CA2F0B7001015E3 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpClient.h; path = ../http/HttpClient.h; sourceTree = "<group>"; };
+		C6CBB2E81CA2F0B7001015E3 /* IHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IHTTPClient.h; path = ../http/IHTTPClient.h; sourceTree = "<group>"; };
+		C6CBB2EA1CA2F0BF001015E3 /* jsmn_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = jsmn_LICENSE.txt; path = ../jsmn/jsmn_LICENSE.txt; sourceTree = "<group>"; };
+		C6CBB2EB1CA2F0BF001015E3 /* jsmn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsmn.c; path = ../jsmn/jsmn.c; sourceTree = "<group>"; };
+		C6CBB2EC1CA2F0BF001015E3 /* jsmn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsmn.h; path = ../jsmn/jsmn.h; sourceTree = "<group>"; };
+		C6CBB2ED1CA2F0BF001015E3 /* jsmntools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsmntools.c; path = ../jsmn/jsmntools.c; sourceTree = "<group>"; };
+		C6CBB2EE1CA2F0BF001015E3 /* jsmntools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsmntools.h; path = ../jsmn/jsmntools.h; sourceTree = "<group>"; };
+		C6CBB2F11CA2F0CA001015E3 /* InfobipTransaction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InfobipTransaction.cpp; path = ../infobip/InfobipTransaction.cpp; sourceTree = "<group>"; };
+		C6CBB2F21CA2F0CA001015E3 /* InfobipTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfobipTransaction.h; path = ../infobip/InfobipTransaction.h; sourceTree = "<group>"; };
+		C6CBB2F41CA2F0D6001015E3 /* GisTransaction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GisTransaction.cpp; path = ../gis/GisTransaction.cpp; sourceTree = "<group>"; };
+		C6CBB2F51CA2F0D6001015E3 /* GisTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GisTransaction.h; path = ../gis/GisTransaction.h; sourceTree = "<group>"; };
+		C6CBB2F71CA2F0E3001015E3 /* Message.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Message.cpp; path = ../message/Message.cpp; sourceTree = "<group>"; };
+		C6CBB2F81CA2F0E3001015E3 /* MessageResultListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageResultListener.h; path = ../message/MessageResultListener.h; sourceTree = "<group>"; };
+		C6CBB2F91CA2F0E3001015E3 /* Messenger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Messenger.cpp; path = ../message/Messenger.cpp; sourceTree = "<group>"; };
+		C6CBB2FA1CA2F0E3001015E3 /* Messenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Messenger.h; path = ../message/Messenger.h; sourceTree = "<group>"; };
+		C6CBB2FB1CA2F0E3001015E3 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Message.h; path = ../message/Message.h; sourceTree = "<group>"; };
+		C6F92A7C1CA04A500047EDC9 /* msngerTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = msngerTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6F92A7F1CA04A500047EDC9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6F92A791CA04A500047EDC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6CBB2C01CA1D1E9001015E3 /* libcurl.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6CBB2B81CA1553F001015E3 /* message */ = {
+			isa = PBXGroup;
+			children = (
+				C6CBB2F71CA2F0E3001015E3 /* Message.cpp */,
+				C6CBB2F81CA2F0E3001015E3 /* MessageResultListener.h */,
+				C6CBB2F91CA2F0E3001015E3 /* Messenger.cpp */,
+				C6CBB2FA1CA2F0E3001015E3 /* Messenger.h */,
+				C6CBB2FB1CA2F0E3001015E3 /* Message.h */,
+			);
+			name = message;
+			sourceTree = "<group>";
+		};
+		C6CBB2B91CA15557001015E3 /* gis */ = {
+			isa = PBXGroup;
+			children = (
+				C6CBB2F41CA2F0D6001015E3 /* GisTransaction.cpp */,
+				C6CBB2F51CA2F0D6001015E3 /* GisTransaction.h */,
+			);
+			name = gis;
+			sourceTree = "<group>";
+		};
+		C6CBB2C11CA27F4B001015E3 /* infobip */ = {
+			isa = PBXGroup;
+			children = (
+				C6CBB2F11CA2F0CA001015E3 /* InfobipTransaction.cpp */,
+				C6CBB2F21CA2F0CA001015E3 /* InfobipTransaction.h */,
+			);
+			name = infobip;
+			sourceTree = "<group>";
+		};
+		C6CBB2C81CA29E89001015E3 /* jsmn */ = {
+			isa = PBXGroup;
+			children = (
+				C6CBB2EA1CA2F0BF001015E3 /* jsmn_LICENSE.txt */,
+				C6CBB2EB1CA2F0BF001015E3 /* jsmn.c */,
+				C6CBB2EC1CA2F0BF001015E3 /* jsmn.h */,
+				C6CBB2ED1CA2F0BF001015E3 /* jsmntools.c */,
+				C6CBB2EE1CA2F0BF001015E3 /* jsmntools.h */,
+			);
+			name = jsmn;
+			sourceTree = "<group>";
+		};
+		C6CBB2D21CA2EF41001015E3 /* http */ = {
+			isa = PBXGroup;
+			children = (
+				C6CBB2E61CA2F0B7001015E3 /* HttpClient.cpp */,
+				C6CBB2E71CA2F0B7001015E3 /* HttpClient.h */,
+				C6CBB2E81CA2F0B7001015E3 /* IHTTPClient.h */,
+			);
+			name = http;
+			sourceTree = "<group>";
+		};
+		C6CBB2D31CA2EF47001015E3 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				C6CBB2DF1CA2F0AC001015E3 /* core.h */,
+				C6CBB2E01CA2F0AC001015E3 /* event.h */,
+				C6CBB2E11CA2F0AC001015E3 /* Log.h */,
+				C6CBB2E21CA2F0AC001015E3 /* MessageLoop.cpp */,
+				C6CBB2E31CA2F0AC001015E3 /* MessageLoop.h */,
+				C6CBB2E41CA2F0AC001015E3 /* Timer.h */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		C6F92A731CA04A500047EDC9 = {
+			isa = PBXGroup;
+			children = (
+				C6CBB2D31CA2EF47001015E3 /* core */,
+				C6CBB2D21CA2EF41001015E3 /* http */,
+				C6CBB2C81CA29E89001015E3 /* jsmn */,
+				C6CBB2C11CA27F4B001015E3 /* infobip */,
+				C6CBB2B91CA15557001015E3 /* gis */,
+				C6CBB2B81CA1553F001015E3 /* message */,
+				C6F92A7E1CA04A500047EDC9 /* msngerTest */,
+				C6F92A7D1CA04A500047EDC9 /* Products */,
+				C6CBB2BF1CA1D1E9001015E3 /* libcurl.tbd */,
+			);
+			sourceTree = "<group>";
+		};
+		C6F92A7D1CA04A500047EDC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6F92A7C1CA04A500047EDC9 /* msngerTest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6F92A7E1CA04A500047EDC9 /* msngerTest */ = {
+			isa = PBXGroup;
+			children = (
+				C6F92A7F1CA04A500047EDC9 /* main.cpp */,
+			);
+			path = msngerTest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C6F92A7B1CA04A500047EDC9 /* msngerTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F92A831CA04A500047EDC9 /* Build configuration list for PBXNativeTarget "msngerTest" */;
+			buildPhases = (
+				C6F92A781CA04A500047EDC9 /* Sources */,
+				C6F92A791CA04A500047EDC9 /* Frameworks */,
+				C6F92A7A1CA04A500047EDC9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = msngerTest;
+			productName = msngerTest;
+			productReference = C6F92A7C1CA04A500047EDC9 /* msngerTest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6F92A741CA04A500047EDC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Stanislav Slavin";
+				TargetAttributes = {
+					C6F92A7B1CA04A500047EDC9 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = C6F92A771CA04A500047EDC9 /* Build configuration list for PBXProject "msngerTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C6F92A731CA04A500047EDC9;
+			productRefGroup = C6F92A7D1CA04A500047EDC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6F92A7B1CA04A500047EDC9 /* msngerTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6F92A781CA04A500047EDC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6CBB2F01CA2F0BF001015E3 /* jsmntools.c in Sources */,
+				C6CBB2FC1CA2F0E3001015E3 /* Message.cpp in Sources */,
+				C6F92A801CA04A500047EDC9 /* main.cpp in Sources */,
+				C6CBB2F31CA2F0CA001015E3 /* InfobipTransaction.cpp in Sources */,
+				C6CBB2E51CA2F0AC001015E3 /* MessageLoop.cpp in Sources */,
+				C6CBB2E91CA2F0B7001015E3 /* HttpClient.cpp in Sources */,
+				C6CBB2F61CA2F0D6001015E3 /* GisTransaction.cpp in Sources */,
+				C6CBB2FD1CA2F0E3001015E3 /* Messenger.cpp in Sources */,
+				C6CBB2EF1CA2F0BF001015E3 /* jsmn.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C6F92A811CA04A500047EDC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C6F92A821CA04A500047EDC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C6F92A841CA04A500047EDC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C6F92A851CA04A500047EDC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6F92A771CA04A500047EDC9 /* Build configuration list for PBXProject "msngerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F92A811CA04A500047EDC9 /* Debug */,
+				C6F92A821CA04A500047EDC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6F92A831CA04A500047EDC9 /* Build configuration list for PBXNativeTarget "msngerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F92A841CA04A500047EDC9 /* Debug */,
+				C6F92A851CA04A500047EDC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6F92A741CA04A500047EDC9 /* Project object */;
+}
