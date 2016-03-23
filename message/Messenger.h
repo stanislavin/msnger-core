@@ -40,7 +40,7 @@ private:
     {
     public:
         MessageHolder(Message& m, MessageResultListener* l): message(m), listener(l), expectedNextState(0) {}
-        Message&               message;
+        Message                message;
         MessageResultListener* listener;
         int                    expectedNextState;
     };

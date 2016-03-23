@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C638EBBD1CA31B3E008E421E /* Msnger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C638EBBB1CA31B3E008E421E /* Msnger.cpp */; };
 		C6CBB2C01CA1D1E9001015E3 /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CBB2BF1CA1D1E9001015E3 /* libcurl.tbd */; };
 		C6CBB2E51CA2F0AC001015E3 /* MessageLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6CBB2E21CA2F0AC001015E3 /* MessageLoop.cpp */; };
 		C6CBB2E91CA2F0B7001015E3 /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6CBB2E61CA2F0B7001015E3 /* HttpClient.cpp */; };
@@ -32,6 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C638EBBB1CA31B3E008E421E /* Msnger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Msnger.cpp; path = ../wrapper/Msnger.cpp; sourceTree = "<group>"; };
+		C638EBBC1CA31B3E008E421E /* Msnger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Msnger.h; path = ../wrapper/Msnger.h; sourceTree = "<group>"; };
 		C6CBB2BF1CA1D1E9001015E3 /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
 		C6CBB2DF1CA2F0AC001015E3 /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = core.h; path = ../core/core.h; sourceTree = "<group>"; };
 		C6CBB2E01CA2F0AC001015E3 /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = event.h; path = ../core/event.h; sourceTree = "<group>"; };
@@ -72,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C638EBBA1CA31B0B008E421E /* wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				C638EBBB1CA31B3E008E421E /* Msnger.cpp */,
+				C638EBBC1CA31B3E008E421E /* Msnger.h */,
+			);
+			name = wrapper;
+			sourceTree = "<group>";
+		};
 		C6CBB2B81CA1553F001015E3 /* message */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +152,7 @@
 		C6F92A731CA04A500047EDC9 = {
 			isa = PBXGroup;
 			children = (
+				C638EBBA1CA31B0B008E421E /* wrapper */,
 				C6CBB2D31CA2EF47001015E3 /* core */,
 				C6CBB2D21CA2EF41001015E3 /* http */,
 				C6CBB2C81CA29E89001015E3 /* jsmn */,
@@ -229,6 +242,7 @@
 				C6F92A801CA04A500047EDC9 /* main.cpp in Sources */,
 				C6CBB2F31CA2F0CA001015E3 /* InfobipTransaction.cpp in Sources */,
 				C6CBB2E51CA2F0AC001015E3 /* MessageLoop.cpp in Sources */,
+				C638EBBD1CA31B3E008E421E /* Msnger.cpp in Sources */,
 				C6CBB2E91CA2F0B7001015E3 /* HttpClient.cpp in Sources */,
 				C6CBB2F61CA2F0D6001015E3 /* GisTransaction.cpp in Sources */,
 				C6CBB2FD1CA2F0E3001015E3 /* Messenger.cpp in Sources */,

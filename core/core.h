@@ -18,6 +18,4 @@
 #define ERROR_INFOBIP_REJECTED_NO_DESTINATION   (-9)
 #define ERROR_INFOBIP_PENDING                   (-10)
 
-int sendMessage(const char* message, const char* recipient, double lat, double lon);
-
 #endif /* core_h */

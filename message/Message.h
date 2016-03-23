@@ -17,7 +17,7 @@ using namespace std;
 class Message
 {
 public:
-    Message(wchar_t* text, wchar_t* recipient, double lat, double lon);
+    Message(const wchar_t* text, const wchar_t* recipient, double lat, double lon);
     ~Message();
     
     wstring toJSON();

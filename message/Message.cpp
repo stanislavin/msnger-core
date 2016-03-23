@@ -10,12 +10,7 @@
 #include <string.h>
 #include "Message.h"
 
-int sendMessage(const char* message, const char* recipient, double lat, double lon)
-{
-    return false;
-}
-
-Message::Message(wchar_t* text, wchar_t* recipient, double lat, double lon):
+Message::Message(const wchar_t* text, const wchar_t* recipient, double lat, double lon):
     mText(text),
     mLat(lat),
     mLon(lon),
