@@ -19,8 +19,8 @@ using namespace std;
 class HttpClient: public IHTTPClient
 {
 public:
-    void get(char* url, IHTTPClient::IHTTPReceiver* receiver);
-    void post(char* url, char* data, size_t data_len, char* headers[], int nheaders, IHTTPClient::IHTTPReceiver* receiver);
+    void get(const char* url, IHTTPClient::IHTTPReceiver* receiver);
+    void post(const char* url, const char* data, size_t data_len, const char* headers[], int nheaders, IHTTPClient::IHTTPReceiver* receiver);
     
 private:
     static size_t httpCallbackStatic(void *contents, size_t size, size_t nmemb, void *userp);

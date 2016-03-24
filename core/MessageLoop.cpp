@@ -11,7 +11,8 @@
 using namespace std;
 
 MessageLoop::MessageLoop():
-    mEvent(false)
+    mEvent(false),
+    mThread(runLoop, this)
 {
     
 }

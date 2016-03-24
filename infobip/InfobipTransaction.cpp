@@ -122,7 +122,7 @@ void InfobipTransaction::sendMessage(const wstring& message, IInfobipCallback* c
     char* data = new char[len +1];
     len = wcstombs(data, message.c_str(), len + 1);
     
-    char* headers[] =
+    const char* headers[] =
     {
         HTTP_HEADER_INFOBIP_AUTH,
         HTTP_HEADER_CONTENT_JSON

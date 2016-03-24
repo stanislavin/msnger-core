@@ -20,8 +20,8 @@ public:
     
     virtual ~IHTTPClient() {};
     
-    virtual void get(char* url, IHTTPReceiver* receiver) = 0;
-    virtual void post(char* url, char* data, size_t data_len, char* headers[], int nheaders, IHTTPReceiver* receiver) = 0;
+    virtual void get(const char* url, IHTTPReceiver* receiver) = 0;
+    virtual void post(const char* url, const char* data, size_t data_len, const char* headers[], int nheaders, IHTTPReceiver* receiver) = 0;
 };
 
 #endif /* IHTTPClient_h */

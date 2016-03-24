@@ -9,11 +9,19 @@
 #ifndef Msnger_h
 #define Msnger_h
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef void* Msnger;
 typedef void (*onMessageSentCallback)(int error);
 
 Msnger createMsnger();
 void   releaseMsnger(Msnger msnger);
-void   sendMessage(Msnger msnger, char* number, char* message, double lat, double lon, onMessageSentCallback callback);
+void   sendMessage(Msnger msnger, const char* number, const char* message, double lat, double lon, onMessageSentCallback callback);
 
+#ifdef __cplusplus
+}
+#endif
+    
 #endif /* Msnger_h */

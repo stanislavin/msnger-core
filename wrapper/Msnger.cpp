@@ -12,6 +12,7 @@
 #include "Msnger.h"
 #include "Messenger.h"
 #include "MessageResultListener.h"
+#include "Log.h"
 
 using namespace std;
 
@@ -64,7 +65,7 @@ void releaseMsnger(Msnger msnger)
     delete ctx;
 }
 
-void sendMessage(Msnger msnger, char* number, char* message, double lat, double lon, onMessageSentCallback callback)
+void sendMessage(Msnger msnger, const char* number, const char* message, double lat, double lon, onMessageSentCallback callback)
 {
     MsngerCtx* ctx = (MsngerCtx*)msnger;
     MsngerListener* listener = new MsngerListener(ctx);
@@ -74,6 +75,8 @@ void sendMessage(Msnger msnger, char* number, char* message, double lat, double 
     string srecipient(number);
     wstring text(stext.begin(), stext.end());
     wstring recipient(srecipient.begin(), srecipient.end());
+    
+    Log::i("Msnger", "recipient(%S) message (%S)", recipient.c_str(), text.c_str());
     
     Message msg(text.c_str(), recipient.c_str(), lat, lon);
     ctx->m->send(msg, listener);

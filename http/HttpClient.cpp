@@ -19,7 +19,7 @@ int HttpClient::curlCode2ErrorCode(int curl_code)
     return ERROR_CODE_UNSUCCESSFUL;
 }
 
-void HttpClient::get(char* url, IHTTPReceiver* receiver)
+void HttpClient::get(const char* url, IHTTPReceiver* receiver)
 {
     CURL *curl = curl_easy_init();
     if (curl == NULL)
@@ -50,7 +50,7 @@ void HttpClient::get(char* url, IHTTPReceiver* receiver)
         }
     }
 }
-void HttpClient::post(char* url, char* data, size_t data_len, char* headers[], int nheaders, IHTTPReceiver* receiver)
+void HttpClient::post(const char* url, const char* data, size_t data_len, const char* headers[], int nheaders, IHTTPReceiver* receiver)
 {
     CURL *curl = curl_easy_init();
     if (curl == NULL)

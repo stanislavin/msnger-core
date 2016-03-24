@@ -40,7 +40,7 @@ private:
     void runLoopInternal();
     bool waitForTask();
     
-    thread                  mThread = thread(runLoop, this);
+    thread                  mThread;
     event                   mEvent;
     recursive_mutex         mThreadMutex;
     queue<MessageContext*>  mMsgQueue;
