@@ -33,6 +33,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C63306FA1CA3F4A6009368E9 /* curl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curl.h; path = ../curl/curl.h; sourceTree = "<group>"; };
+		C63306FB1CA3F4A6009368E9 /* curlbuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curlbuild.h; path = ../curl/curlbuild.h; sourceTree = "<group>"; };
+		C63306FC1CA3F4A6009368E9 /* curlrules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curlrules.h; path = ../curl/curlrules.h; sourceTree = "<group>"; };
+		C63306FD1CA3F4A6009368E9 /* curlver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curlver.h; path = ../curl/curlver.h; sourceTree = "<group>"; };
+		C63306FE1CA3F4A6009368E9 /* easy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = easy.h; path = ../curl/easy.h; sourceTree = "<group>"; };
+		C63306FF1CA3F4A6009368E9 /* mprintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mprintf.h; path = ../curl/mprintf.h; sourceTree = "<group>"; };
+		C63307001CA3F4A6009368E9 /* multi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = multi.h; path = ../curl/multi.h; sourceTree = "<group>"; };
+		C63307011CA3F4A6009368E9 /* stdcheaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdcheaders.h; path = ../curl/stdcheaders.h; sourceTree = "<group>"; };
+		C63307021CA3F4A6009368E9 /* typecheck-gcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "typecheck-gcc.h"; path = "../curl/typecheck-gcc.h"; sourceTree = "<group>"; };
 		C638EBBB1CA31B3E008E421E /* Msnger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Msnger.cpp; path = ../wrapper/Msnger.cpp; sourceTree = "<group>"; };
 		C638EBBC1CA31B3E008E421E /* Msnger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Msnger.h; path = ../wrapper/Msnger.h; sourceTree = "<group>"; };
 		C6CBB2BF1CA1D1E9001015E3 /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
@@ -75,6 +84,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C63306F91CA3F49A009368E9 /* curl */ = {
+			isa = PBXGroup;
+			children = (
+				C63306FA1CA3F4A6009368E9 /* curl.h */,
+				C63306FB1CA3F4A6009368E9 /* curlbuild.h */,
+				C63306FC1CA3F4A6009368E9 /* curlrules.h */,
+				C63306FD1CA3F4A6009368E9 /* curlver.h */,
+				C63306FE1CA3F4A6009368E9 /* easy.h */,
+				C63306FF1CA3F4A6009368E9 /* mprintf.h */,
+				C63307001CA3F4A6009368E9 /* multi.h */,
+				C63307011CA3F4A6009368E9 /* stdcheaders.h */,
+				C63307021CA3F4A6009368E9 /* typecheck-gcc.h */,
+			);
+			name = curl;
+			sourceTree = "<group>";
+		};
 		C638EBBA1CA31B0B008E421E /* wrapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,16 +177,17 @@
 		C6F92A731CA04A500047EDC9 = {
 			isa = PBXGroup;
 			children = (
-				C638EBBA1CA31B0B008E421E /* wrapper */,
+				C6CBB2BF1CA1D1E9001015E3 /* libcurl.tbd */,
 				C6CBB2D31CA2EF47001015E3 /* core */,
-				C6CBB2D21CA2EF41001015E3 /* http */,
-				C6CBB2C81CA29E89001015E3 /* jsmn */,
-				C6CBB2C11CA27F4B001015E3 /* infobip */,
+				C63306F91CA3F49A009368E9 /* curl */,
 				C6CBB2B91CA15557001015E3 /* gis */,
+				C6CBB2D21CA2EF41001015E3 /* http */,
+				C6CBB2C11CA27F4B001015E3 /* infobip */,
+				C6CBB2C81CA29E89001015E3 /* jsmn */,
 				C6CBB2B81CA1553F001015E3 /* message */,
 				C6F92A7E1CA04A500047EDC9 /* msngerTest */,
 				C6F92A7D1CA04A500047EDC9 /* Products */,
-				C6CBB2BF1CA1D1E9001015E3 /* libcurl.tbd */,
+				C638EBBA1CA31B0B008E421E /* wrapper */,
 			);
 			sourceTree = "<group>";
 		};
