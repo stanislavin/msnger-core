@@ -35,12 +35,14 @@ void GisTransaction::resolveAddress(double lat, double lon, IGisCallback* callba
     char* url = new char[max_len];
     sprintf(url, HTTP_GOOGLE_URL_FORMAT, lat, lon);
     
-    Log::i("Google", "[HTTP GET] %s", url);
+    LOGI("Google", "[HTTP GET] %s", url);
     mHttp->get(url, this);
 }
 
 void GisTransaction::onHTTPResponse(int errorCode, const char* response)
 {
+    LOGI("onAddressResolvedGoogle", "[HTTP RSP] %s", response);
+
     if (errorCode != ERROR_CODE_SUCCESS)
     {
         if (mCallback != NULL)
@@ -60,7 +62,7 @@ void GisTransaction::onHTTPResponse(int errorCode, const char* response)
         return;
     }
     
-    Log::i("Google", "[HTTP RSP] address: %s", address.c_str());
+    LOGI("onAddressResolvedGoogle", "[HTTP RSP] ADDRESS: %s", address.c_str());
     
     // deliver address to listener
     if (mCallback != NULL)

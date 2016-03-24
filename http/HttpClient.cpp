@@ -12,9 +12,20 @@
 
 #include "HttpClient.h"
 #include "core.h"
+#include "Log.h"
 
 int HttpClient::curlCode2ErrorCode(int curl_code)
 {
+    int error = ERROR_CODE_UNSUCCESSFUL;
+    switch (curl_code)
+    {
+        case CURLE_COULDNT_RESOLVE_HOST:
+        {
+            error = ERROR_HOST_NOT_FOUND;
+            break;
+        }
+    }
+    LOGI("HttpClient", "curlCode2ErrorCode: (%d) -> (%d)", curl_code, ERROR_CODE_UNSUCCESSFUL);
     // TODO: handle error code translation
     return ERROR_CODE_UNSUCCESSFUL;
 }
@@ -30,6 +41,8 @@ void HttpClient::get(const char* url, IHTTPReceiver* receiver)
         }
         return;
     }
+
+    LOGI("HttpClient", "[HTTP POST] url=%s", url);
     
     curl_easy_setopt(curl, CURLOPT_URL, url);
     curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, false);
@@ -61,6 +74,9 @@ void HttpClient::post(const char* url, const char* data, size_t data_len, const 
         }
         return;
     }
+
+    LOGI("HttpClient", "[HTTP GET] url=%s", url);
+    LOGI("HttpClient", "[HTTP GET] data=%s", url);
     
     struct curl_slist *curl_headers = NULL;
     for (int i = 0; i < nheaders; i++)
@@ -100,8 +116,7 @@ size_t HttpClient::httpCallbackStatic(void *contents, size_t size, size_t nmemb,
     {
         return 0;
     }
-    
-    // TODO: make sure we accumulate all the data and deliver full response to receiver
+
     char* data = new char[size*nmemb + 1];
     memset(data, 0, size * nmemb + 1);
     memcpy(data, contents, size * nmemb);

@@ -115,7 +115,7 @@ InfobipTransaction::~InfobipTransaction()
 void InfobipTransaction::sendMessage(const wstring& message, IInfobipCallback* callback)
 {
     mCallback = callback;
-    
+
     // convert wstring to char*
     // tbd: unicode
     size_t len = wcstombs(NULL, message.c_str(), 0);
@@ -128,7 +128,7 @@ void InfobipTransaction::sendMessage(const wstring& message, IInfobipCallback* c
         HTTP_HEADER_CONTENT_JSON
     };
     
-    Log::i("Infobip", "[HTTP POST] %s", data);
+    LOGI("Infobip", "[HTTP POST] %s", data);
     mHttp->post(HTTP_URL_INFOBIP, data, len, headers, sizeof(headers)/sizeof(headers[0]), this);
 }
 
@@ -155,15 +155,26 @@ int infobipStatus2Error(int infobipStatusId)
 
 void InfobipTransaction::onHTTPResponse(int errorCode, const char* response)
 {
+    LOGI("Infobip", "[HTTP] %d %s", errorCode, response);
+    if (errorCode != ERROR_CODE_SUCCESS)
+    {
+        if (mCallback != NULL)
+        {
+            mCallback->onInfobipMessageSent(errorCode);
+        }
+        mCallback = NULL;
+        return;
+    }
+
     InfobipSentMessageResponse iresp(response);
     
-    Log::i("Infobip", "[MSG] to:               %s", iresp.to.c_str());
-    Log::i("Infobip", "[MSG] status.id:        %d", iresp.status.id);
-    Log::i("Infobip", "[MSG] status.groupId:   %d", iresp.status.groupId);
-    Log::i("Infobip", "[MSG] status.groupName: %s", iresp.status.groupName.c_str());
-    Log::i("Infobip", "[MSG] status.name:      %s", iresp.status.description.c_str());
-    Log::i("Infobip", "[MSG] smsCount:         %d", iresp.smsCount);
-    Log::i("Infobip", "[MSG] messageId:        %s", iresp.messageId.c_str());
+    LOGI("Infobip", "[MSG] to:               %s", iresp.to.c_str());
+    LOGI("Infobip", "[MSG] status.id:        %d", iresp.status.id);
+    LOGI("Infobip", "[MSG] status.groupId:   %d", iresp.status.groupId);
+    LOGI("Infobip", "[MSG] status.groupName: %s", iresp.status.groupName.c_str());
+    LOGI("Infobip", "[MSG] status.name:      %s", iresp.status.description.c_str());
+    LOGI("Infobip", "[MSG] smsCount:         %d", iresp.smsCount);
+    LOGI("Infobip", "[MSG] messageId:        %s", iresp.messageId.c_str());
     
     if (mCallback != NULL)
     {

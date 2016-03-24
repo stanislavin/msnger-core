@@ -27,7 +27,7 @@ enum MSG_ID
 class AddressResultHolder
 {
 public:
-    AddressResultHolder(int e, const char* a): error(e), address(a) {}
+    AddressResultHolder(int e, const char* a): error(e), address(a ? a : "") {}
     int    error;
     string address;
 };
@@ -63,7 +63,7 @@ void Messenger::onTimerExpired(void* context)
 void Messenger::onTimerCancelled(void* context)
 {
     int* msg = (int*)context;
-    Log::i("Messenger", "timer cancelled for %d", *msg);
+    LOGI("Messenger", "timer cancelled for %d", *msg);
     delete msg;
 }
 
@@ -102,7 +102,7 @@ void Messenger::onMsgProcessNextMessage()
 {
     if (mMessages.empty())
     {
-        Log::i("Messenger", "Message queue is empty");
+        LOGI("Messenger", "Message queue is empty");
         return;
     }
     
@@ -129,6 +129,13 @@ void Messenger::onMsgGisAddressResolved(int error, const char* address)
         return;
     }
     h.expectedNextState = MSG_ID_INFOBIP_SEND_COMPLETE;
+
+    if (error != ERROR_CODE_SUCCESS)
+    {
+        h.listener->onMessageSent(error);
+        mMessages.pop();
+        return;
+    }
     
     // tbd: unicodes
     string saddress(address);
@@ -183,14 +190,14 @@ void Messenger::onMsgTimerExpired(int msg)
     {
         case MSG_ID_ADDR_RESOLVED:
         {
-            Log::i("Messenger", "timer expired for MSG_ID_ADDR_RESOLVED");
+            LOGI("Messenger", "timer expired for MSG_ID_ADDR_RESOLVED");
             h.listener->onMessageSent(ERROR_GIS_TIMEOUT);
             break;
         }
             
         case MSG_ID_INFOBIP_SEND_COMPLETE:
         {
-            Log::i("Messenger", "timer expired for MSG_ID_INFOBIP_SEND_COMPLETE");
+            LOGI("Messenger", "timer expired for MSG_ID_INFOBIP_SEND_COMPLETE");
             h.listener->onMessageSent(ERROR_INFOBIP_TIMEOUT);
             break;
         }
@@ -209,7 +216,7 @@ void Messenger::onMessage(int message, void* ctx)
     {
         case MSG_ID_SEND:
         {
-            Log::i("Messenger", "MSG_ID_SEND");
+            LOGI("Messenger", "MSG_ID_SEND");
             MessageHolder* h = (MessageHolder*)ctx;
             if (h != NULL)
             {
@@ -221,7 +228,7 @@ void Messenger::onMessage(int message, void* ctx)
             
         case MSG_ID_ADDR_RESOLVED:
         {
-            Log::i("Messenger", "MSG_ID_ADDR_RESOLVED");
+            LOGI("Messenger", "MSG_ID_ADDR_RESOLVED");
             AddressResultHolder* a = (AddressResultHolder*)ctx;
             if (a != NULL)
             {
@@ -233,7 +240,7 @@ void Messenger::onMessage(int message, void* ctx)
             
         case MSG_ID_INFOBIP_SEND_COMPLETE:
         {
-            Log::i("Messenger", "MSG_ID_INFOBIP_SENT");
+            LOGI("Messenger", "MSG_ID_INFOBIP_SENT");
             int* error = (int*)ctx;
             if (error != NULL)
             {
@@ -245,14 +252,14 @@ void Messenger::onMessage(int message, void* ctx)
             
         case MSG_ID_PROCESS_NEXT_MESSAGE:
         {
-            Log::i("Messenger", "MSG_ID_PROCESS_NEXT_MESSAGE");
+            LOGI("Messenger", "MSG_ID_PROCESS_NEXT_MESSAGE");
             onMsgProcessNextMessage();
             break;
         }
             
         case MSG_ID_TIMER_EXPIRED:
         {
-            Log::i("Messenger", "MSG_ID_TIMER_EXPIRED");
+            LOGI("Messenger", "MSG_ID_TIMER_EXPIRED");
             int* msg = (int*)ctx;
             if (msg != NULL)
             {
@@ -264,7 +271,7 @@ void Messenger::onMessage(int message, void* ctx)
             
         default:
         {
-            Log::i("Messenger", "message not handled");
+            LOGI("Messenger", "message not handled");
             break;
         }
     }

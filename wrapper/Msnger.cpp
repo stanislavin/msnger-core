@@ -70,13 +70,16 @@ void sendMessage(Msnger msnger, const char* number, const char* message, double 
     MsngerCtx* ctx = (MsngerCtx*)msnger;
     MsngerListener* listener = new MsngerListener(ctx);
     ctx->callbacks[listener] = callback;
+
+
+    LOGI("Msnger", "recipient(%s) message (%s)", number, message);
     
     string stext(message);
     string srecipient(number);
     wstring text(stext.begin(), stext.end());
     wstring recipient(srecipient.begin(), srecipient.end());
     
-    Log::i("Msnger", "recipient(%S) message (%S)", recipient.c_str(), text.c_str());
+    //LOGI("Msnger", "recipient(%S) message (%S)", recipient.c_str(), text.c_str());
     
     Message msg(text.c_str(), recipient.c_str(), lat, lon);
     ctx->m->send(msg, listener);

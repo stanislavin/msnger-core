@@ -9,7 +9,17 @@
 #ifndef Log_h
 #define Log_h
 
+#ifdef MSNGER_ANDROID
+#include <android/log.h>
+#endif
+
 #include <cstdio>
+
+#ifdef MSNGER_ANDROID
+#define LOGI(TAG,...) __android_log_print(ANDROID_LOG_INFO   , TAG,__VA_ARGS__)
+#else
+#define LOGI(TAG,...) Log::i(TAG, __VA_ARGS__)
+#endif
 
 class Log
 {

@@ -17,5 +17,6 @@
 #define ERROR_INFOBIP_TIMEOUT                   (-8)
 #define ERROR_INFOBIP_REJECTED_NO_DESTINATION   (-9)
 #define ERROR_INFOBIP_PENDING                   (-10)
+#define ERROR_HOST_NOT_FOUND                    (-11)
 
 #endif /* core_h */
