@@ -8,7 +8,7 @@
 
 #include <cstdlib>
 
-#include <curl/curl.h>
+#include "curl/curl.h"
 
 #include "HttpClient.h"
 #include "core.h"
