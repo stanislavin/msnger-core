@@ -18,5 +18,7 @@
 #define ERROR_INFOBIP_REJECTED_NO_DESTINATION   (-9)
 #define ERROR_INFOBIP_PENDING                   (-10)
 #define ERROR_HOST_NOT_FOUND                    (-11)
+#define ERROR_GIS_RESULTS_EMPTY                 (-12)
+#define ERROR_INFOBIP_REJECTED_NO_PREFIX        (-13)
 
 #endif /* core_h */

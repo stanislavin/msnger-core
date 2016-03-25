@@ -16,7 +16,7 @@
 #include "Log.h"
 
 #define HTTP_GOOGLE_AUTH_KEY    "AIzaSyAoXA8z_pbs7nGN2zFoL4lwZoxvGKxUaI8"
-#define HTTP_GOOGLE_URL_FORMAT  "https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&result_type=street_address&key=" HTTP_GOOGLE_AUTH_KEY
+#define HTTP_GOOGLE_URL_FORMAT  "https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&result_type=street_address&language=en&key=" HTTP_GOOGLE_AUTH_KEY
 
 GisTransaction::GisTransaction()
 {
@@ -56,13 +56,22 @@ void GisTransaction::onHTTPResponse(int errorCode, const char* response)
     // response is huge, need to accumulate
     mGeocodeResponse += string(response);
     string address = parseAddressFromHttpResponse(mGeocodeResponse.c_str());
-    if (address.compare("") == 0)
+    string status = parseStatusFromHttpResponse(mGeocodeResponse.c_str());
+    if (status.compare("ZERO_RESULTS") == 0)
+    {
+        LOGI("onAddressResolvedGoogle", "[HTTP RSP] STATUS: %s", status.c_str());
+        errorCode = ERROR_GIS_RESULTS_EMPTY;
+    }
+    else if (address.compare("") == 0)
     {
         // wait for more data
         return;
     }
+    else
+    {
+        LOGI("onAddressResolvedGoogle", "[HTTP RSP] ADDRESS: %s", address.c_str());
+    }
     
-    LOGI("onAddressResolvedGoogle", "[HTTP RSP] ADDRESS: %s", address.c_str());
     
     // deliver address to listener
     if (mCallback != NULL)
@@ -89,6 +98,31 @@ string GisTransaction::parseAddressFromHttpResponse(const char* response)
     {
         // from the whole object we need only formatted address
         if (jsoneq(json.c_str(), &t[i], "formatted_address") == 0)
+        {
+            ret = string(json.c_str() + t[i+1].start,t[i+1].end - t[i+1].start);
+            i++;
+        }
+    }
+    return ret;
+}
+
+string GisTransaction::parseStatusFromHttpResponse(const char* response)
+{
+    string json(response);
+    string ret("");
+    
+    jsmn_parser p;
+    jsmntok_t t[128];
+    
+    jsmn_init(&p);
+    
+    int r = jsmn_parse(&p, json.c_str(), json.length(), t, sizeof(t)/sizeof(t[0]));
+    if (r < 0) return ret; // failed
+    
+    for (int i = 0; i < r; i++)
+    {
+        // from the whole object we need only formatted address
+        if (jsoneq(json.c_str(), &t[i], "status") == 0)
         {
             ret = string(json.c_str() + t[i+1].start,t[i+1].end - t[i+1].start);
             i++;

@@ -33,6 +33,7 @@ public:
 private:
     void onHTTPResponse(int errorCode, const char* response);
     string parseAddressFromHttpResponse(const char* response);
+    string parseStatusFromHttpResponse(const char* response);
     
     IGisCallback* mCallback = NULL;
     IHTTPClient*  mHttp = NULL;

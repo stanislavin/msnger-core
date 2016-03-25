@@ -21,8 +21,9 @@ using namespace std;
 #define HTTP_HEADER_INFOBIP_AUTH "Authorization: Basic c3RhbmlzbGF2c2xhdmluOjA3MDI4OQ=="
 #define HTTP_HEADER_CONTENT_JSON "Content-Type: application/json"
 
-#define INFOBIP_STATUS_PENDING           (7)
-#define INFOBIP_STATUS_NO_DESTINATION    (51)
+#define INFOBIP_STATUS_PENDING                  (7)
+#define INFOBIP_STATUS_NO_DESTINATION           (51)
+#define INFOBIP_STATUS_REJECTED_PREFIX_MISSING  (8)
 
 class InfobipSentMessageResponse
 {
@@ -143,6 +144,10 @@ int infobipStatus2Error(int infobipStatusId)
         case INFOBIP_STATUS_PENDING:
         {
             return ERROR_INFOBIP_PENDING;
+        }
+        case INFOBIP_STATUS_REJECTED_PREFIX_MISSING:
+        {
+            return ERROR_INFOBIP_REJECTED_NO_PREFIX;
         }
         default:
         {
