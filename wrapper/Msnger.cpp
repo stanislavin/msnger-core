@@ -79,8 +79,6 @@ void sendMessage(Msnger msnger, const char* number, const char* message, double 
     wstring text(stext.begin(), stext.end());
     wstring recipient(srecipient.begin(), srecipient.end());
     
-    //LOGI("Msnger", "recipient(%S) message (%S)", recipient.c_str(), text.c_str());
-    
     Message msg(text.c_str(), recipient.c_str(), lat, lon);
     ctx->m->send(msg, listener);
 }
