@@ -61,6 +61,7 @@ void GisTransaction::onHTTPResponse(int errorCode, const char* response)
     {
         LOGI("onAddressResolvedGoogle", "[HTTP RSP] STATUS: %s", status.c_str());
         errorCode = ERROR_GIS_RESULTS_EMPTY;
+        mGeocodeResponse = "";
     }
     else if (address.compare("") == 0)
     {
@@ -72,7 +73,7 @@ void GisTransaction::onHTTPResponse(int errorCode, const char* response)
         LOGI("onAddressResolvedGoogle", "[HTTP RSP] ADDRESS: %s", address.c_str());
     }
     
-    
+    mGeocodeResponse = "";
     // deliver address to listener
     if (mCallback != NULL)
     {
