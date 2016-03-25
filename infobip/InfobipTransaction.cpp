@@ -1,6 +1,6 @@
 //
 //  Infobip.cpp
-//  msngerTest
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 23/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
@@ -13,7 +13,7 @@
 #include "jsmn.h"
 #include "jsmntools.h"
 #include "Log.h"
-#include "core.h"
+#include "Errors.h"
 
 using namespace std;
 

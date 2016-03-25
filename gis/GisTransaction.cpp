@@ -1,6 +1,6 @@
 //
 //  gis.cpp
-//  msngerTest
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 21/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
@@ -10,7 +10,7 @@
 
 #include "GisTransaction.h"
 #include "HttpClient.h"
-#include "core.h"
+#include "Errors.h"
 #include "jsmn.h"
 #include "jsmntools.h"
 #include "Log.h"

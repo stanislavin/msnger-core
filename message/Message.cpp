@@ -1,6 +1,6 @@
 //
 //  message.cpp
-//  msngerTest
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 21/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
@@ -14,7 +14,8 @@ Message::Message(const wchar_t* text, const wchar_t* recipient, double lat, doub
     mText(text),
     mLat(lat),
     mLon(lon),
-    mRecipientNumber(recipient)
+    mRecipientNumber(recipient),
+    mRetried(false)
 {
     
 }
@@ -60,4 +61,12 @@ double Message::getLon()
 const wstring& Message::getRecipient()
 {
     return mRecipientNumber;
+}
+void Message::setRetried(bool b)
+{
+    mRetried = b;
+}
+bool Message::isRetried()
+{
+    return mRetried;
 }

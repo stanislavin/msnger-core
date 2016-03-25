@@ -1,6 +1,6 @@
 //
 //  message.hpp
-//  msngerTest
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 21/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
@@ -28,6 +28,8 @@ public:
     double getLat();
     double getLon();
     const wstring& getRecipient();
+    void setRetried(bool b);
+    bool isRetried();
     
 private:
     wstring  mText;
@@ -35,6 +37,7 @@ private:
     double   mLat = 0;
     double   mLon = 0;
     wstring  mAddress;
+    bool     mRetried;
 };
 
 #endif /* message_h */

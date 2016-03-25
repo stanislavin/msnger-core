@@ -1,6 +1,6 @@
 //
-//  event.h
-//  msngerTest
+//  Event.h
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 22/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
@@ -13,10 +13,10 @@
 
 using namespace std;
 
-class event
+class Event
 {
 public:
-    event(bool set):
+    Event(bool set):
     signaled(set)
     {
     }

@@ -1,19 +1,19 @@
 //
 //  timer.h
-//  msngerTest
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 23/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
 //
 
-#ifndef timer_h
-#define timer_h
+#ifndef Timer_h
+#define Timer_h
 
 #include <list>
 #include <thread>
 #include <mutex>
 
-#include "event.h"
+#include "Event.h"
 
 using namespace std;
 
@@ -81,9 +81,9 @@ private:
     
     ITimerCallback* callback;
     void*           callback_ctx;
-    event           evt;
+    Event           evt;
     thread          th;
     int             delay_ms;
 };
 
-#endif /* timer_h */
+#endif /* Timer_h */

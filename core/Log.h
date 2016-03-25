@@ -1,6 +1,6 @@
 //
 //  Log.h
-//  msngerTest
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 22/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.

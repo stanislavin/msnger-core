@@ -1,6 +1,6 @@
 //
 //  TaskThread.hpp
-//  msngerTest
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 22/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
@@ -14,7 +14,7 @@
 #include <thread>
 #include <queue>
 
-#include "event.h"
+#include "Event.h"
 
 using namespace std;
 
@@ -41,7 +41,7 @@ private:
     bool waitForTask();
     
     thread                  mThread;
-    event                   mEvent;
+    Event                   mEvent;
     recursive_mutex         mThreadMutex;
     queue<MessageContext*>  mMsgQueue;
     bool                    mStopped = false;

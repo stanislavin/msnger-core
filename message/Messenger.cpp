@@ -1,25 +1,25 @@
 //
 //  MessageFactory.cpp
-//  msngerTest
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 22/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
 //
 
 #include "Messenger.h"
-#include "core.h"
+#include "Errors.h"
 #include "Log.h"
 
 #define TRANSACTION_TIMEOUT (30000) /*ms*/
 
 enum MSG_ID
 {
-    MSG_ID_UNKNOWN = 0,
-    MSG_ID_SEND    = 1,
-    MSG_ID_PROCESS_NEXT_MESSAGE = 2,
-    MSG_ID_ADDR_RESOLVED = 3,
-    MSG_ID_INFOBIP_SEND_COMPLETE = 4,
-    MSG_ID_TIMER_EXPIRED = 5,
+    MSG_ID_UNKNOWN                  = 0,
+    MSG_ID_SEND                     = 1,
+    MSG_ID_PROCESS_NEXT_MESSAGE     = 2,
+    MSG_ID_ADDR_RESOLVED            = 3,
+    MSG_ID_INFOBIP_SEND_COMPLETE    = 4,
+    MSG_ID_TIMER_EXPIRED            = 5,
     
     MSG_ID_LAST
 };
@@ -130,12 +130,23 @@ void Messenger::onMsgGisAddressResolved(int error, const char* address)
     }
     h.expectedNextState = MSG_ID_INFOBIP_SEND_COMPLETE;
 
-    if (error != ERROR_CODE_SUCCESS)
+    if (error == ERROR_HOST_NOT_FOUND && !h.message.isRetried())
+    {
+        // retry once
+        h.message.setRetried(true);
+        LOGI("Messenger", "re-trying to resolve address due to ERROR_HOST_NOT_FOUND");
+        post(MSG_ID_PROCESS_NEXT_MESSAGE);
+        return;
+    }
+    else if (error != ERROR_CODE_SUCCESS)
     {
         h.listener->onMessageSent(error);
         mMessages.pop();
         return;
     }
+    
+    // reset retries
+    h.message.setRetried(false);
     
     // tbd: unicodes
     string saddress(address);
@@ -167,6 +178,19 @@ void Messenger::onMsgInfobipSendComplete(int error)
         return;
     }
     
+    if (error == ERROR_HOST_NOT_FOUND && !h.message.isRetried())
+    {
+        // retry once
+        h.message.setRetried(true);
+        LOGI("Messenger", "re-trying to send message due to ERROR_HOST_NOT_FOUND");
+        
+        // schedule timer to handle timeouts
+        postTimerForMessage(MSG_ID_INFOBIP_SEND_COMPLETE);
+        
+        // send request to infobip
+        mInfobip.sendMessage(h.message.toJSON(), this);
+        return;
+    }
     
     h.listener->onMessageSent(error);
     mMessages.pop();

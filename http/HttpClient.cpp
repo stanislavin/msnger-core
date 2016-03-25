@@ -1,6 +1,6 @@
 //
 //  HttpClient.cpp
-//  msngerTest
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 22/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
@@ -11,7 +11,7 @@
 #include "curl/curl.h"
 
 #include "HttpClient.h"
-#include "core.h"
+#include "Errors.h"
 #include "Log.h"
 
 int HttpClient::curlCode2ErrorCode(int curl_code)

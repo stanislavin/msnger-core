@@ -1,6 +1,6 @@
 //
 //  gis.hpp
-//  msngerTest
+//  msnger-core
 //
 //  Created by Stanislav Slavin on 21/03/16.
 //  Copyright © 2016 Stanislav Slavin. All rights reserved.
